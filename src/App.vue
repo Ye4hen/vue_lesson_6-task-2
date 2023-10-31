@@ -50,22 +50,6 @@ export default {
             }
         },
 
-        AddToBrandList(index) {
-            if (this.brands.includes(index)) {
-                this.brands = this.brands.filter((item) => item !== index)
-            } else {
-                this.brands.push(index)
-            }
-        },
-
-        AddToSellerList(index) {
-            if (this.seller.includes(index)) {
-                this.seller = this.seller.filter((item) => item !== index)
-            } else {
-                this.seller.push(index)
-            }
-        },
-
         clearFilters() {
             this.filteredArray = this.productsArray
             this.brands = []

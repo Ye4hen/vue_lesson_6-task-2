@@ -26,7 +26,7 @@
             </ul>
             <div v-else>Таких брендів немає</div>
         </div>
-        <button @click="$emit('dropFilters')">Скинути фільтри</button>
+        <button @click="resetFilters">Скинути фільтри</button>
     </div>
 </template>
 
@@ -121,6 +121,12 @@ export default {
                 this.selectedBrands.push(brand)
             }
             this.$emit('filterBox', this.selectedSellers, this.selectedBrands)
+        },
+        resetFilters() {
+            this.searchFilterText = null
+            this.selectedSellers = []
+            this.selectedBrands = []
+            this.$emit('dropFilters')
         },
     },
 }
